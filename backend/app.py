@@ -93,12 +93,11 @@ except Exception as e:
     print("   L'application fonctionnera sans blockchain")
 
 # Configuration PostgreSQL
-DB_CONFIG = {
-    'dbname': 'mediconnect',
-    'user': 'postgres',
-    'password': "fadoua",
-    'host': 'localhost',
-    'port': '5432'
+INIT_DB_CONFIG = {
+    'host': os.getenv('DB_HOST', 'localhost'),
+    'user': os.getenv('DB_USER', 'postgres'),
+    'password': os.getenv('DB_PASSWORD', ''),
+    'port': os.getenv('DB_PORT', '5432')
 }
 
 def get_db_connection():
