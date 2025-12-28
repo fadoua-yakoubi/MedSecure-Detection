@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau de Bord - MediConnect</title>
+            <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🩺</text></svg>">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <i class="fas fa-stethoscope"></i>
+            <span>MediConnect</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a
+                href="#dashboard"
+                class="nav-item active"
+                data-page="dashboard"
+              >
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Tableau de Bord</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#consultations"
+                class="nav-item"
+                data-page="consultations"
+              >
+                <i class="fas fa-calendar-check"></i>
+                <span>Mes Consultations</span>
+              </a>
+            </li>
+            <li>
+              <a href="#medecins" class="nav-item" data-page="medecins">
+                <i class="fas fa-user-md"></i>
+                <span>Médecins</span>
+              </a>
+            </li>
+            <li>
+              <a href="#profil" class="nav-item" data-page="profil">
+                <i class="fas fa-user"></i>
+                <span>Mon Profil</span>
+              </a>
+            </li>
+            <li>
+              <a href="#parametres" class="nav-item" data-page="parametres">
+                <i class="fas fa-cog"></i>
+                <span>Paramètres</span>
+              </a>
+            </li>
+            <li>
+              <a href="#security" class="nav-item" data-page="security">
+                <i class="fas fa-shield-alt"></i>
+                <span>Sécurité BERT</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logout-btn" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Déconnexion</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="content-header">
+          <div class="header-left">
+            <h1 id="page-title">Tableau de Bord</h1>
+          </div>
+          <div class="header-right">
+            <div class="user-menu">
+              <div class="user-info">
+                <span class="user-name" id="user-name">Chargement...</span>
+                <span class="user-role" id="user-role">Patient</span>
+              </div>
+              <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page Content -->
+        <div class="page-content">
+          <!-- Dashboard Page -->
+          <div id="dashboard-page" class="page active">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-info">
+                  <h3 id="total-consultations">0</h3>
+                  <p>Consultations Total</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                  <h3 id="consultations-terminees">0</h3>
+                  <p>Consultations Terminées</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                  <h3 id="consultations-planifiees">0</h3>
+                  <p>Consultations Planifiées</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-info">
+                  <h3>4.8/5</h3>
+                  <p>Satisfaction</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-grid">
+              <div class="recent-consultations">
+                <h2>Consultations Récentes</h2>
+                <div class="consultations-list" id="recent-consultations">
+                  <!-- Les consultations seront chargées ici -->
+                </div>
+              </div>
+
+              <div class="quick-actions">
+                <h2>Actions Rapides</h2>
+                <div class="actions-grid">
+                  <button class="action-btn" id="new-consultation-btn">
+                    <i class="fas fa-video"></i>
+                    <span>Nouvelle Consultation</span>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Mes Documents</span>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-prescription"></i>
+                    <span>Ordonnances</span>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-calendar-plus"></i>
+                    <span>Prendre Rendez-vous</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consultations Page -->
+          <div id="consultations-page" class="page">
+            <div class="page-header">
+              <h2>Mes Consultations</h2>
+              <button class="btn btn-primary" id="add-consultation-btn">
+                <i class="fas fa-plus"></i>
+                Nouvelle Consultation
+              </button>
+            </div>
+            <div class="consultations-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Médecin</th>
+                    <th>Durée</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="consultations-table-body">
+                  <!-- Les consultations seront chargées ici -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Profil Page -->
+          <div id="profil-page" class="page">
+            <div class="profile-header">
+              <h2>Mon Profil</h2>
+            </div>
+            <div class="profile-content">
+              <div class="profile-card">
+                <div class="profile-avatar">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-info">
+                  <h3 id="profile-name">Chargement...</h3>
+                  <p id="profile-email">Chargement...</p>
+                  <p id="profile-phone">Chargement...</p>
+                  <p id="profile-role">Chargement...</p>
+                </div>
+              </div>
+
+              <div class="profile-form">
+                <h3>Informations Personnelles</h3>
+                <form id="profile-form">
+                  <div class="form-group">
+                    <label for="profile-nom">Nom Complet</label>
+                    <input
+                      type="text"
+                      id="profile-nom"
+                      name="nom_complet"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="profile-email">Email</label>
+                    <input
+                      type="email"
+                      id="profile-email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="profile-phone">Téléphone</label>
+                    <input type="tel" id="profile-phone" name="telephone" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    Enregistrer les modifications
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Security Testing Page -->
+          <div id="security-page" class="page">
+            <div class="page-header">
+              <h2>🧪 Tests de Sécurité BERT</h2>
+              <p class="page-subtitle">
+                Simulez des attaques et observez la détection en temps réel
+              </p>
+            </div>
+     
+            <!-- Statistics Cards -->
+            <div class="stats-grid security-stats">
+              <div class="stat-card security-stat">
+                <div class="stat-icon">
+                  <i class="fas fa-bug"></i>
+                </div>
+                <div class="stat-info">
+                  <h3 id="total-attacks">0</h3>
+                  <p>Attaques Testées</p>
+                </div>
+              </div>
+              <div class="stat-card security-stat">
+                <div class="stat-icon">
+                  <i class="fas fa-shield-check"></i>
+                </div>
+                <div class="stat-info">
+                  <h3 id="detected-attacks">0</h3>
+                  <p>Attaques Détectées</p>
+                </div>
+              </div>
+              <div class="stat-card security-stat">
+                <div class="stat-icon">
+                  <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-info">
+                  <h3 id="detection-rate">0%</h3>
+                  <p>Taux de Détection</p>
+                </div>
+              </div>
+          
+            </div>
+
+            <!-- Test Controls -->
+            <div class="security-controls">
+              <div class="controls-header">
+                <h3>🎯 Types d'Attaques</h3>
+                <p>Sélectionnez le type d'attaque à simuler</p>
+              </div>
+
+              <div class="test-buttons-grid">
+                <!-- Force Brute -->
+                <div class="test-card">
+                  <div class="test-header">
+                    <i class="fas fa-hammer"></i>
+                    <h4>Force Brute</h4>
+                  </div>
+                  <p class="test-description">
+                    50 tentatives de connexion rapides pour tester la détection
+                    des attaques par force brute.
+                  </p>
+                  <div class="test-metrics">
+                    <span class="metric"
+                      ><i class="fas fa-bolt"></i> 20 req/s</span
+                    >
+                    <span class="metric"
+                      ><i class="fas fa-shield-alt"></i> Haut risque</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-danger test-btn"
+                    data-test="bruteforce"
+                  >
+                    <i class="fas fa-play"></i>
+                    Lancer le Test
+                  </button>
+                </div>
+
+                <!-- IP Suspectes -->
+                <div class="test-card">
+                  <div class="test-header">
+                    <i class="fas fa-globe"></i>
+                    <h4>IPs Suspectes</h4>
+                  </div>
+                  <p class="test-description">
+                    Simulation d'attaques depuis des pays et IPs suspects
+                    (Russie, Chine, Allemagne).
+                  </p>
+                  <div class="test-metrics">
+                    <span class="metric"
+                      ><i class="fas fa-flag"></i> 5 pays</span
+                    >
+                    <span class="metric"
+                      ><i class="fas fa-shield-alt"></i> Risque moyen</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-warning test-btn"
+                    data-test="suspicious_ips"
+                  >
+                    <i class="fas fa-play"></i>
+                    Lancer le Test
+                  </button>
+                </div>
+
+                <!-- User Agents -->
+                <div class="test-card">
+                  <div class="test-header">
+                    <i class="fas fa-robot"></i>
+                    <h4>Bots & Scanners</h4>
+                  </div>
+                  <p class="test-description">
+                    Tests avec des user agents de bots, scanners de
+                    vulnérabilités et outils malveillants.
+                  </p>
+                  <div class="test-metrics">
+                    <span class="metric"
+                      ><i class="fas fa-tools"></i> 10 agents</span
+                    >
+                    <span class="metric"
+                      ><i class="fas fa-shield-alt"></i> Risque faible</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-info test-btn"
+                    data-test="malicious_agents"
+                  >
+                    <i class="fas fa-play"></i>
+                    Lancer le Test
+                  </button>
+                </div>
+
+                <!-- Comportement Anormal -->
+                <div class="test-card">
+                  <div class="test-header">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>Comportement Anormal</h4>
+                  </div>
+                  <p class="test-description">
+                    Simulation de comportements suspects (changements rapides
+                    d'IP, succès/échecs mélangés).
+                  </p>
+                  <div class="test-metrics">
+                    <span class="metric"
+                      ><i class="fas fa-exchange-alt"></i> 5 patterns</span
+                    >
+                    <span class="metric"
+                      ><i class="fas fa-shield-alt"></i> Risque élevé</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-primary test-btn"
+                    data-test="abnormal_behavior"
+                  >
+                    <i class="fas fa-play"></i>
+                    Lancer le Test
+                  </button>
+                </div>
+
+                <!-- Injection SQL -->
+                <div class="test-card">
+                  <div class="test-header">
+                    <i class="fas fa-database"></i>
+                    <h4>Injection SQL</h4>
+                  </div>
+                  <p class="test-description">
+                    Tests de détection des tentatives d'injection SQL dans les
+                    champs de connexion.
+                  </p>
+                  <div class="test-metrics">
+                    <span class="metric"
+                      ><i class="fas fa-code"></i> 8 payloads</span
+                    >
+                    <span class="metric"
+                      ><i class="fas fa-shield-alt"></i> Risque critique</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-dark test-btn"
+                    data-test="sql_injection"
+                  >
+                    <i class="fas fa-play"></i>
+                    Lancer le Test
+                  </button>
+                </div>
+
+                <!-- Test Complet -->
+                <div class="test-card featured">
+                  <div class="test-header">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Test Complet</h4>
+                  </div>
+                  <p class="test-description">
+                    Lance tous les tests automatiquement pour une évaluation
+                    complète du système.
+                  </p>
+                  <div class="test-metrics">
+                    <span class="metric"
+                      ><i class="fas fa-bolt"></i> Tous les tests</span
+                    >
+                    <span class="metric"
+                      ><i class="fas fa-shield-alt"></i> Évaluation
+                      complète</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-success test-btn"
+                    data-test="full_test"
+                  >
+                    <i class="fas fa-play-circle"></i>
+                    Test Complet
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Display -->
+            <div class="results-section">
+              <div class="results-header">
+                <h3>📊 Résultats en Temps Réel</h3>
+                <div class="results-controls">
+                  <button class="btn btn-outline" id="clear-results">
+                    <i class="fas fa-trash"></i>
+                    Effacer
+                  </button>
+                  <button class="btn btn-outline" id="export-results">
+                    <i class="fas fa-download"></i>
+                    Exporter
+                  </button>
+                </div>
+              </div>
+
+              <div class="results-container">
+                <div class="results-log" id="security-results">
+                  <div class="log-placeholder">
+                    <i class="fas fa-terminal"></i>
+                    <p>
+                      Les résultats des tests s'afficheront ici en temps réel
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="test-progress hidden" id="test-progress">
+                  <div class="progress-header">
+                    <span id="progress-text">Test en cours...</span>
+                    <span id="progress-percent">0%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Notification System -->
+    <div id="notification" class="notification hidden">
+      <div class="notification-content">
+        <i class="notification-icon"></i>
+        <span class="notification-message"></span>
+      </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

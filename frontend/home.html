@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediConnect - Télémédecine de Qualité</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🩺</text></svg>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>MediConnect</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#fonctionnalites" class="nav-link">Fonctionnalités</a></li>
+                        <li><a href="#apropos" class="nav-link">À propos</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-outline">Connexion</a>
+                    <a href="index.html" class="btn btn-primary">S'inscrire</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Soins médicaux à distance, <span class="highlight">simples et sécurisés</span></h1>
+                    <p class="hero-description">
+                        MediConnect révolutionne l'accès aux soins de santé. Consultez des médecins qualifiés 
+                        depuis chez vous, à tout moment. Prenez rendez-vous en quelques clics et recevez 
+                        des soins personnalisés.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="login.html" class="btn btn-primary btn-large">
+                            Commencer maintenant
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#services" class="btn btn-secondary btn-large">
+                            <i class="fas fa-play-circle"></i>
+                            Voir la démo
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Patients satisfaits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Médecins partenaires</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Disponibilité</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <img src="assets/images/hero-medical.svg" alt="Télémédecine" class="hero-img">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-video"></i>
+                            <span>Consultation vidéo</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-file-medical"></i>
+                            <span>Ordonnance en ligne</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-calendar-check"></i>
+                            <span>Rendez-vous instantanés</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services Médicaux</h2>
+                <p>Des soins complets adaptés à vos besoins de santé</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Consultation Vidéo</h3>
+                    <p>Consultez un médecin en visioconférence depuis le confort de votre domicile</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> HD qualité</li>
+                        <li><i class="fas fa-check"></i> Audio clair</li>
+                        <li><i class="fas fa-check"></i> Partage d'écran</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-prescription"></i>
+                    </div>
+                    <h3>Ordonnances Électroniques</h3>
+                    <p>Recevez vos ordonnances directement dans votre espace personnel sécurisé</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Transmission sécurisée</li>
+                        <li><i class="fas fa-check"></i> Téléchargement instantané</li>
+                        <li><i class="fas fa-check"></i> Archivage automatique</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Gestion de Rendez-vous</h3>
+                    <p>Planifiez, modifiez ou annulez vos rendez-vous en toute simplicité</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Rappels automatiques</li>
+                        <li><i class="fas fa-check"></i> Calendrier intelligent</li>
+                        <li><i class="fas fa-check"></i> Annulation facile</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comment-medical"></i>
+                    </div>
+                    <h3>Messagerie Médicale</h3>
+                    <p>Échangez en toute sécurité avec votre médecin entre les consultations</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Communication asynchrone</li>
+                        <li><i class="fas fa-check"></i> Partage de documents</li>
+                        <li><i class="fas fa-check"></i> Réponses sous 24h</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Suivi de Santé</h3>
+                    <p>Surveillez vos paramètres de santé et partagez-les avec votre médecin</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Tableaux de bord</li>
+                        <li><i class="fas fa-check"></i> Alertes intelligentes</li>
+                        <li><i class="fas fa-check"></i> Historique complet</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sécurité des Données</h3>
+                    <p>Vos données médicales sont cryptées et protégées conformément au RGPD</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Chiffrement de bout en bout</li>
+                        <li><i class="fas fa-check"></i> Hébergement certifié</li>
+                        <li><i class="fas fa-check"></i> Contrôle d'accès</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="fonctionnalites" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fonctionnalités Avancées</h2>
+                <p>Une expérience utilisateur optimisée pour les patients et les médecins</p>
+            </div>
+            <div class="features-content">
+                <div class="feature-tabs">
+                    <button class="feature-tab active" data-tab="patient">
+                        <i class="fas fa-user"></i>
+                        Pour les Patients
+                    </button>
+                    <button class="feature-tab" data-tab="medecin">
+                        <i class="fas fa-user-md"></i>
+                        Pour les Médecins
+                    </button>
+                </div>
+                <div class="feature-panels">
+                    <div class="feature-panel active" id="patient-panel">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-search"></i>
+                                <div>
+                                    <h4>Trouver un Spécialiste</h4>
+                                    <p>Recherchez et filtrez parmi nos médecins certifiés par spécialité, localisation et disponibilité</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div>
+                                    <h4>Application Mobile</h4>
+                                    <p>Accédez à tous vos services médicaux depuis votre smartphone iOS ou Android</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bell"></i>
+                                <div>
+                                    <h4>Rappels Intelligents</h4>
+                                    <p>Recevez des notifications pour vos rendez-vous et suivis médicaux</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-history"></i>
+                                <div>
+                                    <h4>Historique Complet</h4>
+                                    <p>Consultez l'historique de toutes vos consultations, ordonnances et résultats</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-panel" id="medecin-panel">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <i class="fas fa-desktop"></i>
+                                <div>
+                                    <h4>Tableau de Bord Médecin</h4>
+                                    <p>Gérez votre agenda, patients et consultations depuis une interface unique</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-file-medical-alt"></i>
+                                <div>
+                                    <h4>Dossier Médical Électronique</h4>
+                                    <p>Accédez aux dossiers patients complets et sécurisés</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-euro-sign"></i>
+                                <div>
+                                    <h4>Gestion des Règlements</h4>
+                                    <p>Facturation électronique et suivi des paiements simplifié</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h4>Analytics Avancés</h4>
+                                    <p>Suivez vos indicateurs de performance et satisfaction patients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à commencer votre voyage vers une meilleure santé ?</h2>
+                <p>Rejoignez des milliers de patients et médecins qui font confiance à MediConnect</p>
+                <div class="cta-actions">
+                    <a href="login.html" class="btn btn-primary btn-large">
+                        Créer un compte gratuit
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary btn-large">
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>MediConnect</span>
+                    </div>
+                    <p class="footer-description">
+                        Votre partenaire de confiance pour des soins de santé accessibles et sécurisés à distance.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Consultation vidéo</a></li>
+                        <li><a href="#">Médecine générale</a></li>
+                        <li><a href="#">Spécialistes</a></li>
+                        <li><a href="#">Suivi médical</a></li>
+                        <li><a href="#">Urgences</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Entreprise</h4>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Carrières</a></li>
+                        <li><a href="#">Presse</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">RGPD</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                        <p><i class="fas fa-envelope"></i> contact@mediconnect.fr</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Avenue de la Santé, 75000 Paris</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MediConnect. Tous droits réservés.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Accessibilité</a>
+                    <a href="#">Plan du site</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
