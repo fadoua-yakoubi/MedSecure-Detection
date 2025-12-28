@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Logs
+logs/*.log
+logs/*.jsonl
+*.log
+
+# Database
+*.db
+*.sqlite
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# ML Models (sauf le modèle final)
+models/training/checkpoints/
+models/training/logs/
+*.pth
+*.pt
+*.ckpt
+
+# Blockchain
+blockchain/build/contracts/*.json
+!blockchain/build/contracts/AttackLogger.json
+blockchain/node_modules/
+
+# Données
+data/
+data/*.csv.backup
+security_logs.json
+security_logs.csv
+detected_attacks.jsonl
+
+# Temporaires
+*.tmp
+*.bak
+*.swp
+*~
+
+# Tests
+.pytest_cache/
+
